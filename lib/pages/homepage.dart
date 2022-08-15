@@ -9,6 +9,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late FToast fToast;
+  
 
   @override
   void initState() {
@@ -43,19 +44,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _showToast() {
     Widget toast = Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 12.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25.0),
-        color: Colors.greenAccent,
+        gradient: const LinearGradient(colors: [Colors.blue, Colors.red]),
+        borderRadius: BorderRadius.circular(10.0),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: const [
           Icon(Icons.check),
           SizedBox(
-            width: 12.0,
+            width: 24.0,
           ),
-          Text("This is a Custom Toast"),
+          Text("This is a First Custom Toast"),
         ],
       ),
     );
@@ -72,8 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
         toastDuration: const Duration(seconds: 2),
         positionedToastBuilder: (context, child) {
           return Positioned(
-            top: 16.0,
-            left: 16.0,
+            top: 100.0,
+            left: 100.0,
             child: child,
           );
         }
